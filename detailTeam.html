@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Detail Team</title>
+        <meta name="description" content="Football News" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#26a69a" />
+        <link rel="shortcut icon" href="/favicons.ico">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Navigasi -->
+        <nav class="teal darken-1" role="navigation">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo" id="logo-container">Team</a>
+                <a href="javascript:back()" class="sidenav-trigger" data-target="nav-mobile">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+                <ul class="topnav right hide-on-med-and-down"></ul>
+                <ul class="sidenav" id="nav-mobile"></ul>
+            </div>
+        </nav>
+        <!-- Akhir Navigasi -->
+
+        <!-- Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="center-align" style="margin-top: 10px;">
+                        <img id="logo" width="150" height="150">
+                        <h4 id="nameTeam"></h4>
+                    </div>
+                    <div class="card">
+                        <div class="card-tabs">
+                            <h5 class="center-align style">Overview</h5>
+                        </div>
+                        <hr>
+
+                        <div class="card-content">
+                            <div class="center-align" id="preloader">
+                                <div class="preloader-wrapper big active">
+                                    <div class="spinner-layer spinner-blue">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div><div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div><div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="overview">
+                                <table class="highlight">
+                                    <thead></thead>
+                                    <tbody class="style">
+                                      <tr>
+                                        <td>Nama: </td>
+                                        <td id="nama" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Nama Pendek: </td>
+                                        <td id="namaP" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Didirikan: </td>
+                                        <td id="didirikan" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Singkatan: </td>
+                                        <td id="tla" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Alamat: </td>
+                                        <td id="alamat" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Telepon: </td>
+                                        <td id="tlp" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Website: </td>
+                                        <td id="website" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Email: </td>
+                                        <td id="email" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Warna Team: </td>
+                                        <td id="color" class="align"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Lokasi: </td>
+                                        <td id="lokasi" class="align"></td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Akhir Content -->
+
+        <!-- FAB -->
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large blue" id="simpan">
+                <i class="large material-icons">archive</i>
+            </a>
+        </div>
+        <!-- Akhir FAB -->
+
+        <!-- Some Scripts -->
+        <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/idb.js"></script>
+        <script src="js/db.js"></script>
+
+        <script src="js/script.js"></script>
+        <script src="js/helpers.js"></script>
+
+        <script src="js/klasmen.js"></script>
+        <script src="js/match.js"></script>
+        <script src="js/teams.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let urlParams = new URLSearchParams(window.location.search);
+                let teamId = Number(urlParams.get("id"));
+                let isFromSaved = urlParams.get("saved");
+                let item = getTeam();
+                let btnSave = document.getElementById("simpan");
+
+                btnSave.onclick = function() {
+                  console.log("tombol favorite dapat diklik.")
+                    item.then(function(data) {
+                      buatFav(data, "favoriteTeam");
+                    });
+                };
+            });
+        </script>
+
+        <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+        <!-- Akhir Some Scripts -->
+    </body>
+</html>

@@ -1,0 +1,88 @@
+html {
+  background-color: rgb(214, 207, 207);
+  position: relative;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+
+
+/* home */
+.center-align {
+  text-align: center;
+}
+
+.center-align .home {
+  padding-bottom: 50px;
+}
+
+
+.text h2 {
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.text h6 {
+  color: lightcyan;
+  font-weight: bold;
+}
+
+.slider h3,
+.slider h5 {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* favorites */
+.favorites a {
+  font-weight: bold;
+}
+
+/* klasemen */
+.font {
+  color: solid black;
+}
+
+/* scorers */
+.scorers {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 30px;
+  padding-bottom: 24px;
+}
+
+/* klasemen */
+.klasemen {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 30px;
+}
+
+/* team */
+.style {
+  font-weight: bold;
+}
+
+.style .align {
+  text-align: right;
+}
+
+.pad {
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+/* footer */
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  background-color: #00897b;
+  padding-top: 20px;
+}
+
+footer p {
+  font-size: medium;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
