@@ -136,7 +136,7 @@
             document.addEventListener("DOMContentLoaded", function() {
                 let urlParams = new URLSearchParams(window.location.search);
                 let teamId = Number(urlParams.get("id"));
-                let isFromSaved = urlParams.get("saved");
+                let idParam = urlParams.get("saved");
                 let item = getTeam();
                 let btnSave = document.getElementById("simpan");
 

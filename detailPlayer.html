@@ -82,20 +82,15 @@
                 let urlParams = new URLSearchParams(window.location.search);
                 let playerId = Number(urlParams.get("id"));
                 let idParam = urlParams.get("saved");
+                let item = getPlayer();
                 let btnSave = document.getElementById("simpan");
 
-                if (idParam) {
-                  btnSave.style.display = "none";
-                  getFavById(playerId, "player");
-                } else {
-                  let item = getPlayer();
-                }
                 btnSave.onclick = function() {
-                  console.log("tombol diklik");
+                  console.log("tombol favorite dapat diklik.")
                     item.then(function(data) {
                       buatFav(data, "favoritePlayer");
                     });
-                }
+                };
             });
         </script>
         <!-- Akhir Some Scripts -->

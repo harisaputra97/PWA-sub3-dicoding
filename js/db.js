@@ -62,11 +62,20 @@ function buatFav(storeName, data) {
 
   dbase(idb)
     .then(db => {
-      const tx = db.transaction(storeName, "readwrite");
-      const store = tx.objectStore(storeName);
-      store.put(data, createData);
+      var tx = db.transaction(storeTeam, "readwrite");
+      var store = tx.objectStore(storeTeam);
+      store.put(createData, storeTeam);
       return tx.complete;
     })
+  dbase(idb)
+    .then(db => {
+      var tx = db.transaction(storePlayer, "readwrite");
+      var store = tx.objectStore(storePlayer);
+      store.put(createData, storePlayer);
+      return tx.complete;
+    })
+
+  
 }
 
 // function buatDataFav(dataType, data) {
